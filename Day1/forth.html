@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forth</title>
+</head>
+<body>
+    <div id="mapid"></div>
+    <div id="filterid"></div>
+    <div id="reduceid"></div>
+    <script>
+        const obj={
+            val1:2,
+            val2:4,
+            val3:5,
+            val4:6
+        };
+        for(val in obj){
+            let values=obj[val]
+            console.log(values*values);
+        }
+        const arr=[1,2,3,4,5];
+        const newArray=arr.map(num=>num*num*num);
+       document.querySelector("#mapid").innerHTML=newArray;
+       const newA=newArray.filter(number=>number%2==1);
+       document.querySelector("#filterid").innerHTML=newA;
+
+       const cart=[
+        {name:"Laptop",price:50000},
+        {name:"mobile",price:12000},
+        {name:"Tablet",price:8000}
+       ];
+       const initialValue = 0;
+       const totalPrice = cart.reduce((accumulator, item) => accumulator + item.price, initialValue);
+       document.querySelector("#reduceid").innerHTML=totalPrice;
+
+       
+    </script>
+</body>
+</html>
